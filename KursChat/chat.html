@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Chat Box</title>
+    <style>
+        body{
+            background-color: #f2e6ff;
+        }
+        .result-cht {
+            height: 400px;
+            width: 25%;
+            margin: auto;
+            background-color: #e5ccff;  
+            border: 3px solid #d7b3ff;
+        }
+        .cht{
+          width: 20%;
+          height: 50px;
+          margin: auto;
+        }
+        input{
+          width:76%;
+          background-color: #f2e6f;
+        }
+        button:hover {
+            background-color: #9633ff;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="result-cht"></div><br>
+        <div class="cht">
+              <input type="text" class="input-cht">
+              <button class="btn-cht">Send</button>
+        </div>
+
+    </main>
+
+    <script>
+
+        let resultCht = document.querySelector(".result-cht");
+        const inputCht = document.querySelector(".input-cht");
+        const btnCht = document.querySelector(".btn-cht");
+
+        btnCht.addEventListener("click", function() {
+            resultCht.innerHTML = resultCht.innerHTML + "<br>" + inputCht.value;
+            inputCht.value = "";
+        })
+    </script>
+
+</body>
+</html>

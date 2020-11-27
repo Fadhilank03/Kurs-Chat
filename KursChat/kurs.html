@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kurs Mata Uang</title>
+	<style>
+		body {
+			background-color: #f0f5f5;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			background-color:#b3cccc;
+			padding: 1em;
+			max-width: 500px;
+			width: 100%;
+			
+		}
+
+		input, select {
+			margin: 1em;
+			padding: 1em;
+			outline: none;
+			border: 1px solid #bdc3c7;
+		}
+
+		button{ 
+			margin: 1em;
+			padding: 1em;
+			border-radius: 3em;
+			outline: none;
+			border: 2px solid black;
+		}
+
+		.result {
+			text-align: center;
+			margin: 1em;
+			padding: 1em;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Kurs Mata Uang</h2>
+	<div class="container">
+		<input type="number" class="input" placeholder="Masukan Banyaknya Nilai">
+		<select class="kurs">
+			<option value="usd">Dollar US 		 </option>
+			<option value="eur">Euro			 </option>
+			<option value="sgd">Dollar Singapore </option>
+			<option value="rm"> Ringgit Malaysia </option>
+			<option value="yn"> Yen Jepan 		 </option>
+			<option value="ras">Riyal Arab Saudi </option>
+		</select>
+		<button class="hitung">Hitung</button>
+		<div class="result">Nilai Rupiah: </p>
+	</div>
+
+	<script>
+		const input		= document.querySelector(".input");
+		const kurs      = document.querySelector(".kurs");
+		const btnHitung = document.querySelector(".hitung");
+		const result 	= document.querySelector(".result");
+
+		btnHitung.addEventListener("click", function() {
+			if (kurs.value == "usd") {
+				result.innerHTML = "Nilai Rupiah: " + parseInt(input.value) * 9915;
+			}
+
+			else if (kurs.value == "eur") {
+				result.innerHTML = "Nilai Rupiah: " + parseInt(input.value) * 15888;
+			}
+
+			else if (kurs.value == "sgd") {
+				result.innerHTML = "Nilai Rupiah: " + parseInt(input.value) * 13472;
+			}
+
+			else if (kurs.value == "rm") {
+				result.innerHTML = "Nilai Rupiah: " + parseInt(input.value) * 874;
+			}
+
+			else if (kurs.value == "yn") {
+				result.innerHTML = "Nilai Rupiah: " + parseInt(input.value) * 120;
+			}
+
+			else if (kurs.value == "ras") {
+				result.innerHTML = "Nilai Rupiah: " + parseInt(input.value) * 3592;
+			}
+
+		})
+	</script>
+</body>
+</html> 
